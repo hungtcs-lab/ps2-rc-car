@@ -63,6 +63,19 @@ void loop() {
       Serial.println("stop backwards");
     }
   }
+
+  // 转向按钮
+  if(ps2x.ButtonPressed(PSB_CIRCLE)) {
+    trunRight();
+  } else if(ps2x.ButtonReleased(PSB_CIRCLE)) {
+    trunStraight();
+  } else if(ps2x.ButtonPressed(PSB_SQUARE)) {
+    trunLeft();
+  } else if(ps2x.ButtonReleased(PSB_SQUARE)) {
+    trunStraight();
+  }
+
+  delay(50);
 }
 
 void handleStatus(int status) {
